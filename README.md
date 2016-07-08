@@ -97,3 +97,37 @@ sub1.subscribe(function(mesage){
 sub1.unsubscribe()
 sub2.unsubscribe()
 ```
+
+## API Reference
+### Publicer
+`Publicer` is a singleton Object that has some methods regarding. Connection and message publishing
+
+### Publicer(args)
+Initialize the Publicer instance with specific arguments. This can be the following
+| Argument Name   | Default   | Description   |
+| --------------- | --------- | ------------- |
+| redisURI        | null      | This option can be used to connect to redis instance via URI. An example is shown in the code above |
+| readyCB         | function() {} | This is the function to be called after the instance is ready |
+| options | {host: '127.0.0.1', port: 6379, channel: 'main'} | The options used when connecting to Redis. Most of them can be found [here](https://github.com/NodeRedis/node_redis/blob/master/README.md#options-object-properties) |
+
+### Publicer.client()
+Returns the instance of the Redis client created by the node-redis api
+
+### Publicer.publish(payload[, channel])
+Publish a message to the channel. *payload* is the data to send in a string. Channel can be either empty, a channel name or a subscriber id. In the first case the message is sent to the channel defined in the initialization, in the second case the message is sent to the arbitary channel name, and in the third case it is sent on the `*channel*:*sid*` where channel is the initial channel name and sid the id of the subscriber.
+
+### Subscriber
+`Subscriber` is a class that can be instanciated multiple times in order to create multiple subscribers
+
+### Subscriber(args)
+The arguments used when constructin a Subscriber object are the same as in Publicer object.
+
+### Subscriber.client()
+Returns the instance of the Redis client created by the node-redis api
+
+
+### Subscriber.subscribe(callback)
+Subscribe to the channel used in the construction of the object. The callback will be called only if a message is published on the id specific channel
+
+### Subscriber.unsubscribe()
+Unsubscribe from all channels and terminate the client 

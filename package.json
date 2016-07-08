@@ -14,7 +14,11 @@
     "redis",
     "pub/sub"
   ],
-  "author": "Kostas Pelelis",
+  "author": {
+    name: "Kostas Pelelis",
+    email: "kpelelis@gmail.com",
+    url: "www.plkost.eu"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/KostasPelelis/redis-pubsub/issues"
