@@ -1,6 +1,6 @@
 {
-  "name": "redis-pubsub",
-  "version": "1.0.0",
+  "name": "redis_pubsub",
+  "version": "1.0.2",
   "description": "A simple high-level redis pub/sub implementation using node's redis package",
   "main": "index.js",
   "scripts": {
@@ -15,9 +15,9 @@
     "pub/sub"
   ],
   "author": {
-    name: "Kostas Pelelis",
-    email: "kpelelis@gmail.com",
-    url: "www.plkost.eu"
+    "name": "Kostas Pelelis",
+    "email": "kpelelis@gmail.com",
+    "url": "www.plkost.eu"
   },
   "license": "ISC",
   "bugs": {

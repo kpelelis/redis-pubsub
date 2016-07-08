@@ -7,7 +7,7 @@ have multiple instances.
 
 ## Install
 ```bash
-$ npm install redis-pubsub      
+$ npm install redis_pubsub      
 ```
 
 ## Usage
