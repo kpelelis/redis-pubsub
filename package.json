@@ -1,6 +1,6 @@
 {
   "name": "redis_pubsub",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple high-level redis pub/sub implementation using node's redis package",
   "main": "index.js",
   "scripts": {
