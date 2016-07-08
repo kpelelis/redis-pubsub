@@ -78,9 +78,9 @@ var args = {
 
 ```javascript
 /*** PUB CODE ***/
-var sub1_id = 1;
+var sub1_id = 0;
 var sub2_id = 1;
-pub.publish("This is my message for sub1", sub2_id)
+pub.publish("This is my message for sub1", sub1_id)
 pub.publish("This is my message for sub2", sub2_id)
 
 /*** PUB CODE ***/
@@ -91,7 +91,7 @@ sub1.subscribe(function(mesage){
 
 sub1.subscribe(function(mesage){
   console.log(message);
-  //Should be 'This is my message for sub1'
+  //Should be 'This is my message for sub2'
 })
 
 sub1.unsubscribe()
