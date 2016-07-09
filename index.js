@@ -1,2 +1,2 @@
-module.exports.Publisher = require('./lib/Publisher');
-module.exports.Subscriber = require('./lib/Subscriber');
+module.exports.Publisher = require('./lib/publisher');
+module.exports.Subscriber = require('./lib/subscriber');
