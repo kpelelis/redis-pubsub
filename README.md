@@ -102,13 +102,14 @@ sub2.unsubscribe()
 ### Publicer
 `Publicer` is a singleton Object that has some methods regarding. Connection and message publishing
 
-### Publicer(args)
+### Publicer(args)  
 Initialize the Publicer instance with specific arguments. This can be the following  
-| Argument Name   | Default   | Description                                                                                         | 
-| -------------- | --------- | ---------------------------------------------------------------------------------------------------- | 
-| redisURI | null | This option can be used to connect to redis instance via URI. An example is shown in the code above|
-| readyCB | null | This is the function to be called after the instance is ready |
-| options | null  | The options used when connecting to Redis. Most of them can be found [here](https://github.com/NodeRedis/node_redis/blob/master/README.md#options-object-properties) | 
+
+| Argument      | Default       | Description  |
+| ------------- | ------------- | ----- |
+| redisURI      | null | This option can be used to connect to redis instance via URI. An example is shown in the code above |
+| readyCB      | function() {} | This is the function to be called after the instance is ready |
+| options | {host: '127.0.0.1', port: 6379, channel: 'main'}      |   The options used when connecting to Redis. Most of them can be found [here](https://github.com/NodeRedis/node_redis/blob/master/README.md#options-object-properties |
 
 ### Publicer.client()
 Returns the instance of the Redis client created by the node-redis api
