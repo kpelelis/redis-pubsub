@@ -45,7 +45,7 @@ var args = {
     port  : 6379,   
   },
   /* 
-    Callback function that will be callede when 
+    Callback function that will be called when 
     the publisher is ready
   */
   readyCB : function() {
@@ -83,7 +83,7 @@ var sub2_id = 1;
 pub.publish("This is my message for sub1", sub2_id)
 pub.publish("This is my message for sub2", sub2_id)
 
-/*** PUB CODE ***/
+/*** SUB CODE ***/
 sub1.subscribe(function(mesage){
   console.log(message);
   //Should be 'This is my message for sub1'
@@ -102,13 +102,14 @@ sub2.unsubscribe()
 ### Publicer
 `Publicer` is a singleton Object that has some methods regarding. Connection and message publishing
 
-### Publicer(args)
-Initialize the Publicer instance with specific arguments. This can be the following
-| Argument Name   | Default   | Description   |
-| --------------- | --------- | ------------- |
-| redisURI        | null      | This option can be used to connect to redis instance via URI. An example is shown in the code above |
-| readyCB         | function() {} | This is the function to be called after the instance is ready |
-| options | {host: '127.0.0.1', port: 6379, channel: 'main'} | The options used when connecting to Redis. Most of them can be found [here](https://github.com/NodeRedis/node_redis/blob/master/README.md#options-object-properties) |
+### Publicer(args)  
+Initialize the Publicer instance with specific arguments. This can be the following  
+
+| Argument      | Default       | Description  |
+| ------------- | ------------- | ----- |
+| redisURI      | null | This option can be used to connect to redis instance via URI. An example is shown in the code above |
+| readyCB      | function() {} | This is the function to be called after the instance is ready |
+| options | {host: '127.0.0.1', port: 6379, channel: 'main'}      |   The options used when connecting to Redis. Most of them can be found [here](https://github.com/NodeRedis/node_redis/blob/master/README.md#options-object-properties) |
 
 ### Publicer.client()
 Returns the instance of the Redis client created by the node-redis api
